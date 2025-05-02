@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Biblioteca Duoc - Gestión de libros</title>
+        <!--Configuración CSS con Style-->>
+        <style>
+            body{font-family: Arial, Helvetica, sans-serif; margin: 20px;}
+            table,th,td{border: 1px solid blueviolet; border-collapse: collapse; padding: 8px;}
+            table{width: fit-content; margin-top: 20px;}
+            input,button{margin: 5px; padding: 8px;}
+        </style>
+    </head>
+    <body>
+        <h1>Biblioteca DUOC</h1>
+        <div>
+            <h2>Agregar un nuevo libro</h2>
+            <input type="text" id="titulo" placeholder="Título">
+            <input type="text" id="autor" placeholder="Autor">
+            <input type="text" id="editorial" placeholder="Editorial">
+            <input type="text" id="isbn" placeholder="ISBN">
+            <input type="number" id="fecha_publicacion" placeholder="Fecha de publicación">
+            <button onclick="agregarLibro()">Agregar libro</button>
+        </div>
+        <div>
+            <h2>
+                Listado de libros
+                <button onclick="listarLibros()">Refrescar lista</button>
+            </h2>
+            <table id="tabla_libros">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>ISBN</td>
+                        <td>Título</td>
+                        <td>Autor</td>
+                        <td>Editorial</td>
+                        <td>Año</td>
+                        <td>Acciones</td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <script src="js/app.js"></script>
+    </body>
+</html>

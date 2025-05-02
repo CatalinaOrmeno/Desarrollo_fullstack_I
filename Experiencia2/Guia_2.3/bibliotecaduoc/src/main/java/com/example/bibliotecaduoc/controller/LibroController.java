@@ -34,7 +34,12 @@ public class LibroController {
         return libroService.saveLibro(l);
     }
     
-    //Buscar libro por ID:
+    @GetMapping("/{id}")
+    public Libro buscarLibro(@PathVariable int id) {
+        return libroService.getLibroIs(id);
+    }
+
+    /*Buscar libro por ID:
     @GetMapping("/id/{id}")//Añadi el "/id/" para que pueda funcionar la busqueda según el filtro.
     public Libro buscaLibroId(@PathVariable int id) {
         return libroService.getLibroIs(id);
@@ -44,7 +49,7 @@ public class LibroController {
     @GetMapping("/isbn/{isbn}")//Añadi el "/isbn/" para que pueda funcionar la busqueda según el filtro.
     public Libro buscaLibroIsbn(@PathVariable String isbn) {
         return libroService.getLibroIsbn(isbn);
-    }
+    }*/
 
     //Actualizar libro:
     @PutMapping("{id}")
