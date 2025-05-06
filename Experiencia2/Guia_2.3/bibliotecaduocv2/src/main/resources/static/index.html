@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Biblioteca Duoc - Gestión de Libros</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 50px; }
-        table, th, td { border: 1px solid rgb(94, 21, 118); border-collapse: collapse; padding: 8px; }
+        body { font-family: Arial, sans-serif; margin: 50px; background-color: rgb(255, 212, 255);}
+        table, th, td { border: 1px solid rgb(118, 21, 78); border-collapse: collapse; padding: 8px; background-color: rgba(255, 255, 255, 0.603);}
         table { width: 100%; margin-top: 20px; }
         input, button { margin: 5px; padding: 8px; }
     </style>
@@ -27,11 +27,10 @@
     <input type="number" id="fechaPublicacion" placeholder="Fecha de Publicación">
     <button id ="botonFormulario" onclick="agregarLibro()">Agregar Libro</button>
 
-    <h2>Listado de Libros</h2>
-    <button onclick="listarLibros()">Refrescar Lista</button>
+    <h2>Listado de Libros <button onclick="listarLibros()">Refrescar Lista</button></h2>
     <table id="tablaLibros">
         <thead>
-            <tr>
+            <tr style="background-color: hotpink;">
                 <th>ID</th>
                 <th>Título</th>
                 <th>Autor</th>
@@ -41,8 +40,7 @@
                 <th>Acciones</th>
             </tr>
         </thead>
-        <tbody>
-        </tbody>
+        <tbody></tbody>
     </table>
 
     <!-- Vincula el script externo -->
