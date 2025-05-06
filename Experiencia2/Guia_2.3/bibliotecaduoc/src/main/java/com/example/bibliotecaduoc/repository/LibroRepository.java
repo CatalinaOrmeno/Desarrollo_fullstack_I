@@ -13,9 +13,10 @@ public class LibroRepository {
 
     public LibroRepository(){
         //Agregar libros manualmente:
+        /*
         listaLibros.add(new Libro(1, "1234567891234", "Libro1", "Editorial1", 2001, ""));
         listaLibros.add(new Libro(2, "1234567891243", "Libro2", "Editorial2", 2025, ""));
-        listaLibros.add(new Libro(3, "1234567891957", "Libro3", "Editorial3", 2007, ""));
+        listaLibros.add(new Libro(3, "1234567891957", "Libro3", "Editorial3", 2007, ""));*/
     }
 
     //CRUD:

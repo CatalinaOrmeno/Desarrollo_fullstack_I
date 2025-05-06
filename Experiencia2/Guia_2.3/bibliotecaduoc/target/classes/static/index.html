@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Biblioteca Duoc - Gestión de libros</title>
-        <!--Configuración CSS con Style-->>
+        <!--Configuración CSS con Style-->
         <style>
             body{font-family: Arial, Helvetica, sans-serif; margin: 20px;}
             table,th,td{border: 1px solid blueviolet; border-collapse: collapse; padding: 8px;}
@@ -29,17 +29,19 @@
                 <button onclick="listarLibros()">Refrescar lista</button>
             </h2>
             <table id="tabla_libros">
-                <thead>
-                    <tr>
-                        <td>ID</td>
-                        <td>ISBN</td>
-                        <td>Título</td>
-                        <td>Autor</td>
-                        <td>Editorial</td>
-                        <td>Año</td>
-                        <td>Acciones</td>
-                    </tr>
-                </thead>
+                <tbody id="tabla_libros_body">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>ISBN</td>
+                            <td>Título</td>
+                            <td>Autor</td>
+                            <td>Editorial</td>
+                            <td>Año</td>
+                            <td>Acciones</td>
+                        </tr>
+                    </thead>
+                </tbody>
             </table>
         </div>
         <script src="js/app.js"></script>

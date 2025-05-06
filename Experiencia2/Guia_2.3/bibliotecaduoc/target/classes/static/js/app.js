@@ -2,12 +2,12 @@ const API_URL = "http://localhost:8080/api/v1/libros";//Ruta de conexión de la 
 //Funcion que nos permite mostrar los libros guardados
 function listarLibros(){
     fetch(API_URL) //hacer una solicitud GET a la API_URL
-        .then(Response = Response.json)//Convierte la respuesta de la API en un archivo.json
+        .then(response = response.json())//Convierte la respuesta de la API en un archivo.json
         .then(libros =>{//Usar el arreglo libros para procesar los libros guardados
-            const tbody = document.querySelector("#tablaLibros tbody");//Obtener el cuerpo de la tabla Tbody
+            const tbody = document.querySelector("#tabla_libros_body");//Obtener el cuerpo de la tabla Tbody
             tbody.innerHTML = "";//Limpia la tabla de cualquier contenido anterior
             libros.forEach(libro => {//Generar el recorrido del arreglo de libros
-                const fila =//Cargar dinamicamente los elementos de la tabla
+                const fila =`//Cargar dinamicamente los elementos de la tabla
                 <tr>
                     <td>${libro.id}</td>
                     <td>${libro.titulo}</td>
@@ -19,7 +19,7 @@ function listarLibros(){
                         <button onclick="eliminarLibro(${libros.id})">Eliminar</button>
                         <button onclick="buscarLibro(${libros.id})">Editar</button>
                     </td>
-                </tr>
+                </tr>`;
                 tbody.innerHTML+=fila;//Llenar las filas de la tabla
             });
         })
@@ -45,7 +45,7 @@ function agregarLibro(){//Sirve para que al tocar el botón de agregar libros se
         body: JSON.stringify(nuevoLibro)
     })
     //Muestra de mensajes de éxito al actualizar la tabla
-    .then(Response => Response.json())
+    .then(response => response.json())
     .then(data =>{
         alert("Libro se agrego exitosamente.");
         listarLibros();
@@ -54,8 +54,8 @@ function agregarLibro(){//Sirve para que al tocar el botón de agregar libros se
 //Funcion para eliminar libro
 function eliminarLibro(id){
     fetch(`${API_URL}/${id}`,{method: "DELETE"})//Eliminara el libro por el id
-        .then(Response =>{
-            if(Response.ok){
+        .then(response =>{
+            if(response.ok){
                 alert("El libro se elimino exitosamente.");
                 listarLibros();
             }
@@ -65,7 +65,7 @@ function eliminarLibro(id){
 //Función para buscar libros
 function buscarLibro(id){
     fetch(`${API_URL}/${id}`)//Buscara el libro por el id
-        .then(Response => Response.json())
+        .then(response => response.json())
         .then(libro =>{
             document.getElementById("titulo").value = libro.titulo;
             document.getElementById("autor").value = libro.autor;
@@ -101,7 +101,7 @@ function actualizarLibro(id){
         headers: {"content-Type":"Application/json"},
         body: JSON.stringify(libroActualizado)
     })
-    .then(Response => Response.json())
+    .then(response => response.json())
     .then(data =>{
         alert("El libro se actualizo exitosamente.");
         listarLibros();
