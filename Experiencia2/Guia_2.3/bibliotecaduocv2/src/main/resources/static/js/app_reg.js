@@ -9,5 +9,8 @@ function registrar(){
 
         })
     })  .then(response => response.json())
-        .then(data => alert("Usuario se creo con el id: " + data.id));
+        .then(data => {
+            alert("Usuario se creo con el id: " + data.id);
+            window.location.href = "/login.html"
+        });
 }

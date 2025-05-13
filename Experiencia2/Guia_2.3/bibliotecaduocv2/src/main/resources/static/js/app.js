@@ -17,8 +17,9 @@ function listarLibros() {
                         <td>${libro.isbn}</td>
                         <td>${libro.fechaPublicacion}</td>
                         <td>
-                            <button onclick="eliminarLibro(${libro.id})">Eliminar</button>
-                            <button onclick="buscarLibro(${libro.id})">Editar</button>
+                            <button class="btn btn-sm btn-danger" onclick="eliminarLibro(${libro.id})">Eliminar</button>
+                            <button class="btn btn-sm btn-warning" onclick="buscarLibro(${libro.id})">Editar</button>
+                            <button class="btn btn-sm btn-success" onclick="carrito.agregarLibro(${libro.id})">Agregar</button>
                         </td>
                     </tr>
                 `;
